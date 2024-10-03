@@ -1,5 +1,3 @@
-
-
 use self::server::ServerConfig;
 use serde::Deserialize;
 
@@ -11,12 +9,12 @@ pub struct AppConfig {
 }
 
 impl AppConfig {
-  pub fn read() -> Self {
-    Self {
-        server: ServerConfig {
-            addr: "127.0.0.1".to_string(),
-            port: 8080
+    pub fn read() -> Self {
+        Self {
+            server: ServerConfig {
+                addr: "127.0.0.1".to_string(),
+                port: 8080,
+            },
         }
     }
-  }
 }

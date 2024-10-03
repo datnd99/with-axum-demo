@@ -9,21 +9,18 @@ pub mod state;
 
 pub struct AppServer {
     pub state: AppState,
-    tcp: TcpListener
+    tcp: TcpListener,
 }
 
 impl AppServer {
     pub async fn new(mut config: AppConfig) -> AppResult<Self> {
-        let tcp: TcpListener = TcpListener::bind(config.server.get_socket_addr()?).await?; 
+        let tcp: TcpListener = TcpListener::bind(config.server.get_socket_addr()?).await?;
         let addr: SocketAddr = tcp.local_addr()?;
 
         config.server.port = addr.port();
         let state: AppState = AppState::new(config).await;
 
-        Ok(Self {
-            state, 
-            tcp
-        })
+        Ok(Self { state, tcp })
     }
 
     pub async fn run(self) -> AppResult<()> {
