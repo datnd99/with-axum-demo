@@ -2,6 +2,7 @@ use std::net::{AddrParseError, SocketAddr};
 
 use serde::Deserialize;
 
+// Khởi tạo server config
 #[derive(Debug, Deserialize, Clone)]
 pub struct ServerConfig {
   pub addr: String,

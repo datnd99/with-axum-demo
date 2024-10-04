@@ -7,11 +7,14 @@ use crate::{configure::AppConfig, error::AppResult, router::create_router_app};
 
 pub mod state;
 
+// tạo cấu trúc thể hiện cho server
 pub struct AppServer {
     pub state: AppState,
     tcp: TcpListener,
 }
 
+
+// tạo phuong thức thực thi cho server
 impl AppServer {
     pub async fn new(mut config: AppConfig) -> AppResult<Self> {
         let tcp: TcpListener = TcpListener::bind(config.server.get_socket_addr()?).await?;
