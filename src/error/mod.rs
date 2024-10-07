@@ -9,4 +9,6 @@ pub enum AppError {
     AddrParseError(#[from] std::net::AddrParseError),
     #[error("{0} input/output error")]
     IoError(#[from] std::io::Error),
+    #[error(transparent)] // tự động sử dụng và hiển thị lỗi từ anyhow Error
+    UnknownError(#[from] anyhow::Error),
 }

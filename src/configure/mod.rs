@@ -4,6 +4,7 @@ use self::server::ServerConfig;
 use serde::Deserialize;
 
 pub mod server;
+pub mod tracing;
 
 // định nghĩa config cho hệ thống
 #[derive(Debug, Deserialize, Clone)]

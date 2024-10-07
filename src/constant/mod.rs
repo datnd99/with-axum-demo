@@ -2,9 +2,6 @@ use std::env;
 
 use once_cell::sync::Lazy;
 
-use dotenvy::dotenv;
-
-
 // khởi tạo cấu trúc cho server
 pub struct EnvConfig {
     pub host: String,
@@ -13,8 +10,6 @@ pub struct EnvConfig {
 
 // đọc file .env và tải dữ liệu vào cấu trúc server
 pub static ENV_VARS: Lazy<EnvConfig> = Lazy::new(|| {
-    dotenv().ok();
-
     let port: u16 = env::var("PORT")
                     .ok()
                     .and_then(|port: String| port.parse::<u16>().ok())
