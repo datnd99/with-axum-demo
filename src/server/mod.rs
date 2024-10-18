@@ -21,7 +21,7 @@ impl AppServer {
         let addr: SocketAddr = tcp.local_addr()?;
 
         config.server.port = addr.port();
-        let state: AppState = AppState::new(config).await;
+        let state: AppState = AppState::new(config).await?;
 
         Ok(Self { state, tcp })
     }

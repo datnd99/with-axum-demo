@@ -6,6 +6,7 @@ use once_cell::sync::Lazy;
 pub struct EnvConfig {
     pub host: String,
     pub port: u16,
+    pub database_url: String,
 }
 
 // đọc file .env và tải dữ liệu vào cấu trúc server
@@ -19,9 +20,14 @@ pub static ENV_VARS: Lazy<EnvConfig> = Lazy::new(|| {
                         .ok()
                         .unwrap_or("127.0.0.1".to_string());
 
+    let database_url: String = env::var("DATABASE_URL")
+                                .ok()
+                                .unwrap_or("".to_string());
+
     EnvConfig {
         host,
         port,
+        database_url
     }
 });
 

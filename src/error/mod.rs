@@ -11,4 +11,6 @@ pub enum AppError {
     IoError(#[from] std::io::Error),
     #[error(transparent)] // tự động sử dụng và hiển thị lỗi từ anyhow Error
     UnknownError(#[from] anyhow::Error),
+    #[error(transparent)]
+    DatabaseError(#[from] sea_orm::DbErr),
 }
