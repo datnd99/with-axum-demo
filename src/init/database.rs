@@ -12,7 +12,7 @@ pub trait DatabaseClientExt: Sized {
 
 impl DatabaseClientExt for DatabaseClient {
   async fn build_from_config(config: &AppConfig) -> AppResult<Self> {
-    let mut opt = ConnectOptions::new(config.db.clone());
+    let mut opt = ConnectOptions::new(config.db.get_url());
     opt
       .max_connections(100)
       .min_connections(5)

@@ -171,8 +171,9 @@ tags
 # Ignore all local history of files
 .history
 .ionide
-
-# End of https://www.toptal.com/developers/gitignore/api/rust,intellij,visualstudiocode,vim
-# env
 .env
 .env.*
+
+
+# End of https://www.toptal.com/developers/gitignore/api/rust,intellij,visualstudiocode,vim
+
