@@ -1,0 +1,10 @@
+# Require environment parameters
+
+- HOST
+- PORT
+- DB_USERNAME
+- DB_PASSWORD
+- DB_HOST
+- DB_PORT
+- DB_DATABASE_NAME
+- DATABASE_URL=```postgres://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_DATABASE_NAME}```

@@ -1,5 +1,7 @@
+# Project Structure
+
 ```
-Project
+root
 │
 ├── .vscode                    # Thư mục chứa cấu hình cho Visual Studio Code
 │
